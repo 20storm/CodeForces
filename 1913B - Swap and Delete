@@ -1,0 +1,28 @@
+def TotalCOst(s):
+  t = []
+  s = list(s)
+  z = s.count("0")
+  o = s.count("1")
+  m = len(s)
+  for i in s:
+    if i == "0":
+      t.append("1")
+    else:
+      t.append("0")
+  n = 0
+  while(o < t.count("1")):
+    n = t.count("1") - o
+    for i in range(n):
+        t.pop()
+  while(z < t.count("0")):
+    n = t.count("0") - z
+    for i in range(n):
+        t.pop()
+  return m - len(t)
+t = int(input())
+l = []
+for i in range(t):
+  s = str(input())
+  l.append(s)
+for i in l:
+  print(TotalCOst(i))
